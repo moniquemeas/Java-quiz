@@ -1,0 +1,113 @@
+header {
+    text-align: center;
+}
+.test header   {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 50px;
+}
+.test{
+    margin: 0 200px 0 200px;
+    background-color: beige;
+    align-content: center;
+    
+}
+.container{
+display: flex;
+justify-content: center;
+text-align: center;
+flex-direction: column;
+flex-wrap: wrap;
+align-content: center;
+
+}
+#end {
+    background-color: beige;
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+.scoreForm{
+    padding-left: 150px;
+}
+.choice-text{
+    font-size: 20px;
+    width: 250px;
+    text-align: center;
+    display: flex;
+    
+}
+.container p {
+    font-size: 18px;
+}
+.container a {
+    border: 3px solid black;
+    width: 50%;
+    background-color: aqua;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.choice-container{
+    margin: 0 300px 0 400px;
+    font-size: 20px;
+    border: 3px solid beige;
+    
+}
+
+.result-form {
+    width: 100%;
+    display: flex;
+    
+    justify-content: center;
+}
+
+
+.correct button{
+    background-color: green;
+}
+.incorrect button{
+    background-color: red;
+}
+.btn{
+
+    font-size: 15px;
+    border: 5px solid beige;
+    background-color: aqua;
+    width: 100px;
+}
+form{
+    width: 200px;
+    font-size: 20px;
+}
+.high-score {
+    border: 1px solid black;
+}
+#home-result {
+    border: 2px solid black;
+    margin-left: 25%;
+    margin-top: 30px;
+}
+#home-score {
+    border: 2px solid black;
+    margin-left: 25%;
+   
+}
+#clearScore {
+    margin-bottom: 10px;
+    border: 3px solid black;
+    font-size: 18px;
+    background-color: aqua;
+    border-radius: 6px;
+    width: 276px;
+    height:31px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+
+

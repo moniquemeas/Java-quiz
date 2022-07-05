@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <main class="test">
+        
+        <div class="container">
+            <h1>All done!</h1>
+            <p>Your final score is: <spa id="finalScore"></spa></p>
+            
+            <form class="result-form">
+                <label> Enter your intial:</label>
+                <input type="text" name="username" id="username" placeholder="username" />
+                <button type= "submit" class= "btn" id="submitScore" onclick="saveHighScore (event)" disabled>
+                    Submit
+                </button> 
+                
+            </form>
+            <a id="home-result" href="./index.html">Home</a>  
+            <a id="home-score" href="./highscore.html">View high score</a> 
+        </div>    
+            
+    </main>
+
+    <script src="./assets/js/score.js"></script>
+</body>
+</html>
