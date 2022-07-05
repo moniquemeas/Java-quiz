@@ -35,7 +35,7 @@ var questions = [
         answer: 2
     },
     {
-        question: "String values must be enclosed within________ whe being assigned to variables.",
+        question: "String values must be enclosed within________ when being assigned to variables.",
         choice1: "commas",
         choice2: "curly brackets",
         choice3: "quotes",
@@ -52,9 +52,10 @@ var questions = [
     },
 
 ]
-
+var count = 60;
 var bonus_score = 10;
 var NumberQuestion = 5;
+var penaltyTime = 10;
 
 startGame = () => {
     questionCounter = 0;
@@ -62,7 +63,10 @@ startGame = () => {
     availableQuestions = [...questions];
     
     getNewQuestion();
+    countdown();
+    
 };
+
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter >= NumberQuestion) {
         //save score to local storage
@@ -104,6 +108,7 @@ choices.forEach(choice => {
     // it it's not correct minus 10 
     else {
         score -= bonus_score;
+        count -= penaltyTime;
 
     }
     scoreText.innerText = score;
@@ -115,6 +120,34 @@ choices.forEach(choice => {
     }, 1000);
     })
 })
+var timerText = document.getElementById("timer");
+
+function countdown() {
+    
+  
+    //assign variable to a function 
+    var timeInterval = setInterval(function () {
+  
+      
+    // if count is greater than 1, set to text content to timeerEL, and decrease count by 1
+      if (count > 1) {
+        timerText.textContent = count + ' seconds remaining';
+        count--;
+        
+      } 
+    else if (count === 1) {
+    timerText.textContent = count + ' second remaining';
+    count--;
+      } 
+      else {
+        timerText.textContent = "Your're out of time!";
+        clearInterval(timeInterval);
+        return window.location.assign("./result.html");
+    }
+    }, 1000);
+  };
+
+  
 
 startGame();
 

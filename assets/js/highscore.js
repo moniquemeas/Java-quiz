@@ -12,4 +12,5 @@ highScoreList.innerHTML = highScore
 
 clearData = e => {
     highScoreList.innerHTML = ''
+    clearScore = localStorage.clear("highscore")
 };
