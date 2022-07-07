@@ -1,3 +1,5 @@
+// Variable declaration
+
 var question = document.getElementById("question");
 var choices = Array.from(document.getElementsByClassName("choice-text"));
 var questionCounterText = document.getElementById('questionCounter');
@@ -9,6 +11,7 @@ var score = 0;
 var questionCounter = 0;
 var availableQuestions = [];
 
+//Array of questions and answers
 var questions = [
     {
         question: "Commonly used data types DO not Include:",
@@ -52,14 +55,18 @@ var questions = [
     },
 
 ]
+
 var count = 60;
 var bonus_score = 10;
 var NumberQuestion = 5;
 var penaltyTime = 10;
 
+// Start game function
 startGame = () => {
     questionCounter = 0;
     score = 0;
+
+    // take all the questions array put them into a new array (availbleQuestion)
     availableQuestions = [...questions];
     
     getNewQuestion();
@@ -75,20 +82,25 @@ getNewQuestion = () => {
         // got to the end of page
         return window.location.assign ("./result.html");
     }
+    //questionCounter is increasing by 1
     questionCounter++;
+    //display the current question that user is on
     questionCounterText.innerText = questionCounter + "/" + NumberQuestion;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length );
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
 
+    //use data attribute to load the question
     choices.forEach(choice => {
         var number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice'+ number];
 
     });
+    //this will take away the previous question 
     availableQuestions.splice(questionIndex, 1);
     acceptingAnswers = true;
 }
+
 
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
@@ -96,7 +108,7 @@ choices.forEach(choice => {
       acceptingAnswers = false;  
     var selectedChoice = e.target
     var selectedAnswer = selectedChoice.dataset['number'];
-
+        //create new variable for correct and incorrection answers
     var classToApply =
     selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
         
@@ -114,6 +126,7 @@ choices.forEach(choice => {
     scoreText.innerText = score;
     selectedChoice.parentElement.classList.add(classToApply);
 
+    //set time interval
     setTimeout ( () => {
     selectedChoice.parentElement.classList.remove(classToApply);
     getNewQuestion();
